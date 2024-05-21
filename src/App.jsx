@@ -1,5 +1,13 @@
+import Header from "./Components/Header/Header";
+import Form from "./Components/Form/Form"
 function App() {
-  return <h1>Crypto App</h1>;
+  return (
+    <div >
+
+    <Header/>
+    <Form/>
+    </div>
+  )
 }
 
 export default App;

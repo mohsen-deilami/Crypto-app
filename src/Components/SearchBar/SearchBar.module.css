@@ -1,0 +1,38 @@
+.searchbar{
+    margin: 20px;
+    background-color: #35353a;
+    box-shadow: 1px 1px 7px #ededed;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+}
+.searchbar input{
+    width: 250px;
+    border-radius: 5px;
+    height: 32px;
+    line-height: 32px;
+    padding: 2px;
+    margin-right: 10px;
+}
+.selection{
+    width: 32px;
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+    position: relative;
+}
+.selection__list{
+   
+    background-color: #303835;
+    position: absolute;
+    left: -5px;
+    visibility: hidden;
+    opacity: 0;
+}
+.selection:hover .selection__list{
+    visibility: visible;
+    opacity: 1;
+}
+.selection__list li{
+    margin: 5px;
+    padding:5px ;
+}
