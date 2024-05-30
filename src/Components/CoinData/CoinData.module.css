@@ -1,7 +1,6 @@
 .container{
   display: flex;
   align-items: center;
-  
   min-height: 1000px;
 }
 .table{
@@ -21,7 +20,7 @@
 tbody tr {
   display: flex;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px ;
   border-bottom: 1px solid #fff;
 
 }

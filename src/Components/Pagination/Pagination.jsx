@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import styles from "./Pagination.module.css";
 import CoinData from "../CoinData/CoinData";
-export default function Pagination({ data, currency }) {
+import {RotatingLines} from "react-loader-spinner"
+export default function Pagination({ data, currency , isLoading }) {
   const pageCounts = Array.from(Array(data.length / 20).keys());
   const [pageNumber, setpageNumber] = useState(1);
-  let endIndex = pageNumber * 20;
-  let startIndex = endIndex - 20;
+  let endIndex = pageNumber * 15;
+  let startIndex = endIndex - 15;
 
+  
   const previousHandler=()=>{
     if(pageNumber > 1 ){
       setpageNumber(pageNumber=>pageNumber-1)
@@ -19,9 +21,19 @@ export default function Pagination({ data, currency }) {
     }
   }
   return (
-    <div>
-      <CoinData datas={data.slice(startIndex, endIndex)} currency={currency} />
-      <div className={styles.pagination}>
+
+<>
+
+    {isLoading  ? 
+   <div className={styles.spiner}>
+
+       <RotatingLines />
+       </div>
+       :(
+         <div className={styles.pagination}>
+        
+      <CoinData datas={data.slice(startIndex, endIndex)} currency={currency} isLoading={isLoading}/>
+      <div className={styles.buttons}>
         <button onClick={previousHandler} className={pageNumber ===1 ? styles.disabled : null}>Previous</button>
         {pageCounts.map((pageCount, index) => (
           <button
@@ -38,6 +50,13 @@ export default function Pagination({ data, currency }) {
         ))}
         <button onClick={nextHandler} className={pageNumber+1 > pageCounts.length ? styles.disabled : null}>Next</button>
       </div>
-    </div>
+       
+        </div>
+       )
+      }
+
+ 
+    </>
+      
   );
 }

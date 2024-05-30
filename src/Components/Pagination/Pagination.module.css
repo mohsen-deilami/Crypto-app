@@ -1,6 +1,16 @@
-.pagination {
+.spiner{
     text-align: center;
+    min-height: 1000px;
+    padding: 50px;
+}
+.pagination {
     padding: 10px;
+    min-height: 1000px;
+
+}
+.buttons{
+    margin:  10px auto;
+    text-align: center;
 }
 
 .pagination button {

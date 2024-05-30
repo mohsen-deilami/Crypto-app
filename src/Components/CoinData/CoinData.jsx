@@ -6,9 +6,10 @@ import { FaArrowUp } from "react-icons/fa";
 import { FaArrowDownLong } from "react-icons/fa6";
 import Modal from "../Modal/Modal";
 
-export default function CoinData({ datas, currency }) {
+export default function CoinData({ datas, currency  }) {
   const [showModal, setShowModal] = useState(false);
   const [coinInfo, setCoinInfo] = useState([]);
+ 
   const closeModalHandler = () => {
     setShowModal(false);
   };
@@ -30,6 +31,7 @@ export default function CoinData({ datas, currency }) {
   return (
     <>
       <div className={styles.container}>
+     
         <table className={styles.table}>
           <thead>
             <tr >
@@ -44,8 +46,8 @@ export default function CoinData({ datas, currency }) {
           </thead>
 
           <tbody>
-            {datas.length !== 0
-              ? datas.map((data, index) => (
+           
+           { datas.map((data, index) => (
                   <tr  key={data.id}>
                       <td
                       onClick={() => {
@@ -97,10 +99,10 @@ export default function CoinData({ datas, currency }) {
                       )}
                     </td>
                   </tr>
-                ))
-              : ""}
+                ))}
           </tbody>
         </table>
+              
      
 
         {showModal && <Modal data={coinInfo} closeModal={closeModalHandler} />}
