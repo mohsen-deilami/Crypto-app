@@ -3,7 +3,8 @@ import styles from "./Pagination.module.css";
 import CoinData from "../CoinData/CoinData";
 import {RotatingLines} from "react-loader-spinner"
 export default function Pagination({ data, currency , isLoading }) {
-  const pageCounts = Array.from(Array(data.length / 20).keys());
+  let arrayLength=Math.ceil(data.length/15)
+  const pageCounts = Array.from(Array(arrayLength).keys());
   const [pageNumber, setpageNumber] = useState(1);
   let endIndex = pageNumber * 15;
   let startIndex = endIndex - 15;

@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Landing.module.css";
-import { TiArrowSortedDown } from "react-icons/ti";
 import Pagination from "../Pagination/Pagination";
+import SearchBar from "../SearchBar/SearchBar";
 
 export default function Landing() {
   const BASE_URL='https://api.coingecko.com/api/v3/coins';
   const API_KEY='x_cg_demo_api_key=CG-LzUgXSWpqW5jZqtUzK5rPcrm';
   const [datas, setDatas] = useState([]);
-  const [search,setSearch]=useState([]);
   const [searchData , setSearchData]=useState([]);
   const [currency,setCurrency] =useState('USD');
   const [isLoading ,setIsLoading]=useState(true);
@@ -27,44 +26,28 @@ export default function Landing() {
   useEffect(() => {
     fetchData();
     
-  }, [currency]);
-  useEffect(() => {
-    searchHandler();
-    
-  }, [search]);
+  }, [currency ]);
 
-  const searchHandler=()=>{
-    if(search){
 
-      const coinData=searchData.filter((coin)=>coin.id.toLowerCase().includes(search));
-     
+  const searchHandler=searchText=>{
+    if(searchText){
+
+      const coinData=searchData.filter((coin)=>coin.id.toLowerCase().includes(searchText));
+     console.log(coinData);
       setDatas(coinData)
     }
     else{
       setDatas(datas);
     }
    
-    
   }
 
   return (
     <>
-   
-    <div className={styles.searchbar}>
-    
-      <input type="text" placeholder="Search" onChange={ e=>setSearch(e.target.value.toLowerCase().trim()) }/>
-      <div className={styles.selection}>
-        <span>{currency} <TiArrowSortedDown /></span>
-        <ul className={styles.selection__list}>
-          <li  className={styles.selection__list__active}  onClick={e=>selectCurrencyHandler(e.target.innerHTML)}>USD</li>
-          <li onClick={e=>selectCurrencyHandler(e.target.innerHTML)}>EUR</li>
-          <li  onClick={e=>selectCurrencyHandler(e.target.innerHTML)}>PND</li>
-        </ul>
-      </div>
-    </div>
+   <SearchBar selectCurrencyHandler={selectCurrencyHandler} searchHandler={searchHandler}/>
       <div className={styles.container}>
        
-        <Pagination currency={currency} data={datas} isLoading={isLoading}/>
+        <Pagination currency={currency} data={datas} isLoading={isLoading} />
       </div> 
     </>
   );

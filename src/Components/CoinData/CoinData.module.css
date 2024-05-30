@@ -1,6 +1,5 @@
 .container{
   display: flex;
-  align-items: center;
   min-height: 1000px;
 }
 .table{
@@ -53,6 +52,9 @@ span {
 
 .warning {
   color: red;
+}
+.container h2{
+  margin: 50px auto;
 }
 @media (max-width:1150px){
    td {

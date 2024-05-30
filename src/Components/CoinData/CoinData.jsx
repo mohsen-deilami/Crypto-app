@@ -31,7 +31,7 @@ export default function CoinData({ datas, currency  }) {
   return (
     <>
       <div className={styles.container}>
-     
+     {datas.length ? (
         <table className={styles.table}>
           <thead>
             <tr >
@@ -47,7 +47,7 @@ export default function CoinData({ datas, currency  }) {
 
           <tbody>
            
-           { datas.map((data, index) => (
+           { datas.map((data) => (
                   <tr  key={data.id}>
                       <td
                       onClick={() => {
@@ -71,7 +71,9 @@ export default function CoinData({ datas, currency  }) {
                   </td>
 
                     <td>
-                      {currency === "USD" ? "$" : ""}{" "}
+                      {currency === "USD" ? " $ " :  " "}
+                      {currency === "EUR" ? " € " :  " "}
+                      {currency === "JPY" ?  `"Y" ` :  " "}
                       {data.current_price.toLocaleString()}
                     </td>
 
@@ -102,6 +104,10 @@ export default function CoinData({ datas, currency  }) {
                 ))}
           </tbody>
         </table>
+
+     ) :(
+      <h2>There is no Data for your search...</h2>
+     )}
               
      
 
