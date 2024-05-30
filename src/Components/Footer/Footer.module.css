@@ -1,0 +1,11 @@
+.footer{
+    background-color: #5c25ff;
+    padding: 20px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 10px;
+   text-align: center;
+}
+h2{
+   color: #fff !important;
+}

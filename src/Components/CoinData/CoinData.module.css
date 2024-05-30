@@ -1,0 +1,63 @@
+.container{
+  display: flex;
+  align-items: center;
+  
+  min-height: 1000px;
+}
+.table{
+  width: 100%;
+}
+.table thead tr {
+
+  font-weight: 900;
+  border-bottom: 3px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+
+}
+
+tbody tr {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #fff;
+
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: fill;
+  margin-right: 5px;
+}
+
+td {
+  cursor: pointer;
+  width: 200px;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+}
+
+span {
+  color: aqua;
+}
+
+.success {
+  color: green;
+}
+
+.warning {
+  color: red;
+}
+@media (max-width:1150px){
+   td {
+width: 180px;
+  }
+
+}

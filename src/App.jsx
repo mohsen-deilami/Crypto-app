@@ -1,11 +1,13 @@
 import Header from "./Components/Header/Header";
-import Form from "./Components/Form/Form"
+import Landing from "./Components/Landing/Landing";
+import Footer from "./Components/Footer/Footer";
 function App() {
   return (
     <div >
 
     <Header/>
-    <Form/>
+    <Landing/>
+    <Footer/>
     </div>
   )
 }

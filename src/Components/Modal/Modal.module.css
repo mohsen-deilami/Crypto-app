@@ -1,0 +1,37 @@
+.modal__parent{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    height: 100vh;
+    width: 100%;
+    background-color: #0808ee6e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal__parent div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: rgb(53, 56, 56);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(103, 101, 101);
+
+}
+.modal__parent p{
+    padding: 36px;
+    color: #fff;
+    font-size: 22px;
+
+}
+.modal__parent button{
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #000;
+
+}

@@ -1,0 +1,16 @@
+.myClass{
+
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .75);
+    border-radius: 10px;
+}
+
+.chart__title{
+    margin-bottom: 16px;
+    font-size: 2rem;
+}
+span{
+    color: #fff;
+}

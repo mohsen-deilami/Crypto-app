@@ -1,0 +1,32 @@
+.pagination {
+    text-align: center;
+    padding: 10px;
+}
+
+.pagination button {
+cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+}
+
+
+.pagination button:hover {
+    transform: scale(1.1);
+}
+
+.number__btn__active {
+    padding: 8px 16px;
+    border-radius: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+    background-color: var(--primary-color);
+}
+.disabled{
+    opacity: .5;
+    transform: scale(1) !important;
+}

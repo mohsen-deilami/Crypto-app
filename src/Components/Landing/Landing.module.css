@@ -1,3 +1,10 @@
+.container{
+    width: 100%; 
+    background-color: #35353a;
+    box-shadow: 1px 1px 7px #ededed;
+    border-radius: 10px;
+}
+
 .searchbar{
     width: 100%;
     margin: 25px 0;
@@ -24,7 +31,9 @@
 }
 .selection span{
     background-color: #ededed;
-    padding: 10px 35px;
+    padding: 10px 10px;
+    display: block ;
+    width: 80px;
     background-color: #3d4343;
     border-radius: 10px;
 }
@@ -36,8 +45,10 @@
     visibility: hidden;
     opacity: 0;
     border-radius: 10px;
-    top: 40px;
-    width: 90px;
+    top: 50px;
+    width: 80px;
+    left: -4px;
+    padding:2px 20px;
     
 }
 .selection:hover .selection__list{
