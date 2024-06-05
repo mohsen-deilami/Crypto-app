@@ -1,16 +1,93 @@
-.myClass{
+.container{
+    width:100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(3px);
+}
+.cross{
+font-size: 32px;
+line-height: 20px;
+color: #fff;
+background-color: red;
+border-radius: 5px;
+cursor: pointer;
+display: inline-block;
+width: 30px;
+height: 30px;
+text-align: center;
+margin: 80px 0 0 180px;
+}
+.charts {
+    width: 850px;
+    height: 450px;
+    margin:  auto;
+    background-color: #18181ce6;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+    margin-top: 50px;
+    z-index: 2;
+}
+.chart{
+    height: 50%;
+}
+.chart span{
+    color: var(--primary-color);
+    font-size: 18px;
 
-    padding: 20px;
-    margin-top: 20px;
-    margin-left: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, .75);
-    border-radius: 10px;
 }
 
-.chart__title{
-    margin-bottom: 16px;
-    font-size: 2rem;
+.chart__title {
+   display: flex;
+   align-items: center;
+   padding: 10px;
+   margin: 10px;
 }
-span{
+.chart__title img {
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: fill;
+    margin-right: 10px;
+  }
+.charts button{
+    margin:  25px 25px;
+    padding: 10px 20px;
+    background-color: #18181ce6;
+    color: #3874ff;
+    border: 1px solid #3874ff;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.charts button:hover{
+    background-color: var(--primary-color);
+    color: #fff !important;
+    }
+
+
+
+.active__btn{
+   
+background-color: var(--primary-color) !important;
+color: #fff !important;
+}
+.infos{
+    margin: 20px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    padding: 10px 20px;
+
+}
+.infos div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.infos div p{
     color: #fff;
+    font-weight: 500;
+    margin-right: 5px;
 }

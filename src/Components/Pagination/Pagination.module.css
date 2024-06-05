@@ -25,7 +25,7 @@ cursor: pointer;
 
 
 .pagination button:hover {
-    transform: scale(1.1);
+  background-color: var(--primary-color);
 }
 
 .number__btn__active {
@@ -36,7 +36,11 @@ cursor: pointer;
     transition: all 400ms ease-in-out;
     background-color: var(--primary-color);
 }
-.disabled{
-    opacity: .5;
-    transform: scale(1) !important;
+.disabled {
+
+    background-color: rgba(86, 85, 85, 0.715); 
+}
+.disabled:hover{
+    background-color: rgba(86, 85, 85, 0.715) !important; 
+  
 }

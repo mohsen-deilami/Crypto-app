@@ -4,28 +4,32 @@ import downChart from "./../../assets/chart-down.svg";
 import upChart from "./../../assets/chart-up.svg";
 import { FaArrowUp } from "react-icons/fa";
 import { FaArrowDownLong } from "react-icons/fa6";
-import Modal from "../Modal/Modal";
+
+import Chart from "../Charts/Chart";
+
+
 
 export default function CoinData({ datas, currency  }) {
-  const [showModal, setShowModal] = useState(false);
-  const [coinInfo, setCoinInfo] = useState([]);
+  const [showChart, setShowChart] = useState(false);
+  const [coinHistory, setCoinHistory] = useState(null);
+  const [type,setType]=useState('prices');
+  
+  const BASE_URL = "https://api.coingecko.com/api/v3/coins";
+  const API_KEY = "x_cg_demo_api_key=CG-LzUgXSWpqW5jZqtUzK5rPcrm";
  
-  const closeModalHandler = () => {
-    setShowModal(false);
-  };
-  const showCoinInfos = async (id) => {
-    const res = await fetch(
-      `https://pro-api.coingecko.com/api/v3/coins/${id}/history`,
-      {
-        headers: {
-          accept: "application/json",
-          x_cg_demo_api_key: "CG-LzUgXSWpqW5jZqtUzK5rPcrm",
-        },
-      }
-    );
+  const showCoinInfos = async (data) => {
+    let coinName=data.id;
+    try {
+      const res = await fetch(
+        `${BASE_URL}/${coinName}/market_chart?vs_currency=${currency}&days=7&${API_KEY}`
+  
+      );
+      const coinHistory = await res.json();
+      setCoinHistory({...coinHistory ,coin:data});
+    } catch (error) {
+      setCoinHistory(null);
+    }
 
-    const data = await res.json();
-    setCoinInfo(data);
   };
 
   return (
@@ -51,8 +55,8 @@ export default function CoinData({ datas, currency  }) {
                   <tr  key={data.id}>
                       <td
                       onClick={() => {
-                        showCoinInfos(data.id);
-                        setShowModal(true);
+                        showCoinInfos(data);
+                        setShowChart(true);
                       }}
                     >
                     <div>
@@ -64,7 +68,7 @@ export default function CoinData({ datas, currency  }) {
                     </td>
                   <td  onClick={() => {
                         showCoinInfos(data.id);
-                        setShowModal(true);
+                        setChartInfo(true);
                       }}>
 
                       {data.name}{" "}
@@ -108,10 +112,12 @@ export default function CoinData({ datas, currency  }) {
      ) :(
       <h2>There is no Data for your search...</h2>
      )}
-              
-     
+             {
+              !!showChart &&
+               <Chart  dataChart={coinHistory}  type={type} setType={setType} setShowChart={setShowChart} />
+             } 
 
-        {showModal && <Modal data={coinInfo} closeModal={closeModalHandler} />}
+       
       </div>
     </>
   );

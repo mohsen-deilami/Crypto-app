@@ -2,13 +2,6 @@ import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
 export default function SearchBar({searchHandler,selectCurrencyHandler}) {
  
-
-
-  /* const selectCurrencyHandler = selectText=>{
-    setCurrency(selectText);
-    console.log(selectText);
-      } */
- 
   return (
     <div className={styles.searchbar}>
       <input type="text" placeholder="Search..." onChange={e=> searchHandler(e.target.value)}/>
