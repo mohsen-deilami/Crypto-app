@@ -6,7 +6,6 @@ const convertData = (data, type) => {
         [type]: item[1],
       };
     });
- 
     return convertedData
   }
 };
