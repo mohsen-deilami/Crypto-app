@@ -10,7 +10,6 @@ export default function SearchBar({searchHandler,selectCurrencyHandler}) {
         <option value="EUR">EUR</option>
         <option value="JPY">JPY</option>
       </select>
-   
     </div>
   );
 }
