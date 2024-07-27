@@ -23,37 +23,25 @@ export default function Pagination({ data, currency , isLoading }) {
 <>
     {isLoading  ? 
    <div className={styles.spiner}>
-
        <RotatingLines />
        </div>
        :(
-         <div className={styles.pagination}>
-        
+         <div className={styles.pagination}>  
       <CoinData datas={data.slice(startIndex, endIndex)} currency={currency} isLoading={isLoading}/>
       <div className={styles.buttons}>
         <button onClick={previousHandler} className={pageNumber ===1 ? styles.disabled : null}>Previous</button>
         {pageCounts.map((pageCount, index) => (
-          <button
-          className={
-            pageNumber !== pageCount + 1
-            ? null
-            : styles.number__btn__active
-          }
-          key={index}
+          <button  className={ pageNumber !== pageCount + 1  ? null : styles.number__btn__active }  key={index}
           onClick={() => setpageNumber(pageCount + 1)}
           >
             {pageCount + 1}
           </button>
         ))}
         <button onClick={nextHandler} className={pageNumber+1 > pageCounts.length ? styles.disabled : null}>Next</button>
-      </div>
-       
+      </div>    
         </div>
        )
       }
-
- 
-    </>
-      
+    </>   
   );
 }
