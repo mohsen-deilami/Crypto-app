@@ -10,12 +10,7 @@ export default function Modal({ data, setShowModal }) {
   return ReactDOM.createPortal(
     <div className={styles.modal}>
       <div>
-        <Chart
-          datas={data}
-          dataChart={convertData(data, type)}
-          title={type}
-          datkey={type}
-        />
+        <Chart    datas={data}     dataChart={convertData(data, type)}    title={type}   datkey={type} />
         <button onClick={() => setShowModal(null)}>Close</button>
       </div>
     </div>,
