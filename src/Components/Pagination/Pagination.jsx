@@ -9,22 +9,18 @@ export default function Pagination({ data, currency , isLoading }) {
   let endIndex = pageNumber * 15;
   let startIndex = endIndex - 15;
 
-  
   const previousHandler=()=>{
     if(pageNumber > 1 ){
       setpageNumber(pageNumber=>pageNumber-1)
     }
   }
-  const nextHandler=()=>{
-    
+  const nextHandler=()=>{ 
     if(pageNumber-1 !== pageCounts){
       setpageNumber(pageNumber=>pageNumber+1)
     }
   }
   return (
-
 <>
-
     {isLoading  ? 
    <div className={styles.spiner}>
 
