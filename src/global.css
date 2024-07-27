@@ -4,14 +4,11 @@
   --primary-color: #3874ff;
   --secondry-color:  #bbdefb;
 }
-
-
 body {
   margin: auto;
   max-width: 1200px;
   min-height: 100vh;
   padding: 10px;
-
   color: #fff;
 }
 
