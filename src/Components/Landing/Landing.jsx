@@ -11,7 +11,6 @@ export default function Landing() {
   const [currency, setCurrency] = useState("USD");
   const [isLoading, setIsLoading] = useState(true);
   const controller=new AbortController();
-
   const selectCurrencyHandler = (selectText) => {
     setCurrency(selectText);
   };
