@@ -51,12 +51,7 @@ export default function CoinData({ datas, currency  }) {
            
            { datas.map((data) => (
                   <tr  key={data.id}>
-                      <td
-                      onClick={() => {
-                        showCoinInfos(data);
-                        setShowChart(true);
-                      }}
-                    >
+                      <td   onClick={() => { showCoinInfos(data); setShowChart(true); }} >
                     <div>
                       <i>
                         <img className={styles.icon} src={data.image} alt="" />
@@ -68,7 +63,6 @@ export default function CoinData({ datas, currency  }) {
                         showCoinInfos(data.id);
                         setChartInfo(true);
                       }}>
-
                       {data.name}{" "}
                   </td>
 
