@@ -22,14 +22,12 @@ export default function CoinData({ datas, currency  }) {
     try {
       const res = await fetch(
         `${BASE_URL}/${coinName}/market_chart?vs_currency=${currency}&days=7&${API_KEY}`
-  
       );
       const coinHistory = await res.json();
       setCoinHistory({...coinHistory ,coin:data});
     } catch (error) {
       setCoinHistory(null);
     }
-
   };
 
   return (
