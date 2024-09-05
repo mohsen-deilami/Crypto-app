@@ -12,9 +12,7 @@ export default function Chart({ dataChart,  type,  setType,  setShowChart}) {
 
   return (
     <div className={styles.container}>
-      <span className={styles.cross} onClick={() => setShowChart(null)}>
-        x
-      </span>
+      <span className={styles.cross} onClick={() => setShowChart(null)}>  x </span>
       <div className={styles.charts}>
         {dataChart ? (
 <>
